@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# can be used with:
+# * ubuntu bionic
+# * linux mint tara
+
 if which ansible >/dev/null; then
     echo "Ansible already installed"
     exit 0
@@ -8,7 +12,7 @@ fi
 apt-get update \
 && apt-get install -y software-properties-common dirmngr \
 && apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 6125E2A8C77F2818FB7BD15B93C4A3FD7BB9C367 \
-&& echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu xenial main" > /etc/apt/sources.list.d/ansible.list \
-&& echo "deb-src http://ppa.launchpad.net/ansible/ansible/ubuntu xenial main" >> /etc/apt/sources.list.d/ansible.list \
+&& echo "deb http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" > /etc/apt/sources.list.d/ansible.list \
+&& echo "deb-src http://ppa.launchpad.net/ansible/ansible/ubuntu bionic main" >> /etc/apt/sources.list.d/ansible.list \
 && apt-get update \
 && apt-get install -y -f ansible
